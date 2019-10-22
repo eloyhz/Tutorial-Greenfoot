@@ -35,6 +35,8 @@ public class Dolphin extends Actor
         setLocation(getX(), getY() + velocity);
         if (isOnSolidGround())   {
             velocity = 0;
+        }   else  if (didBumpHead())  {
+            velocity = 0;
         }   else    {
             velocity += GRAVITY;
         }
@@ -74,5 +76,18 @@ public class Dolphin extends Actor
             isOnGround = true;
         }
         return isOnGround;
+    }
+    
+    public boolean didBumpHead()
+    {
+        boolean bumpedHead = false;
+        int imageWidth = getImage().getWidth();
+        int imageHeight = getImage().getHeight();
+        if (getOneObjectAtOffset(imageWidth / -2, imageHeight / -2, Platform.class) != null 
+            || getOneObjectAtOffset(imageWidth / 2, imageHeight / -2, Platform.class) != null)   
+        {
+            bumpedHead = true;
+        }
+        return bumpedHead;
     }
 }
