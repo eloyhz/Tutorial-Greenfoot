@@ -66,6 +66,13 @@ public class Dolphin extends Actor
         if (getY() > getWorld().getHeight() - 70)   {
             isOnGround = true;
         }
+        int imageWidth = getImage().getWidth();
+        int imageHeight = getImage().getHeight();
+        if (getOneObjectAtOffset(imageWidth / -2, imageHeight / 2, Platform.class) != null 
+            || getOneObjectAtOffset(imageWidth / 2, imageHeight / 2, Platform.class) != null)   
+        {
+            isOnGround = true;
+        }
         return isOnGround;
     }
 }
