@@ -35,7 +35,11 @@ public class Dolphin extends Actor
         setLocation(getX(), getY() + velocity);
         if (isOnSolidGround())   {
             velocity = 0;
-        }   else  if (didBumpHead())  {
+            while (isOnSolidGround())   {
+                setLocation(getX(), getY() - 1);
+            }
+            setLocation(getX(), getY() + 1);
+        }   else  if (velocity < 0 && didBumpHead())  {
             velocity = 0;
         }   else    {
             velocity += GRAVITY;
