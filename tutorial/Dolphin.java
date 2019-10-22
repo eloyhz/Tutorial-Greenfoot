@@ -13,7 +13,7 @@ public class Dolphin extends Actor
     
     public Dolphin()
     {
-        velocity = 3;
+        velocity = 0;
     }
     
     /**
@@ -23,6 +23,10 @@ public class Dolphin extends Actor
     public void act() 
     {
         fall();
+        if (Greenfoot.isKeyDown("space") 
+            && getY() > getWorld().getHeight() - 70)   {
+            jump();
+        }
     }    
     
     public void fall()
@@ -33,5 +37,10 @@ public class Dolphin extends Actor
         }   else    {
             velocity += GRAVITY;
         }
+    }
+    
+    public void jump()
+    {
+        velocity = -20;
     }
 }
