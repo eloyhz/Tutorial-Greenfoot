@@ -23,8 +23,8 @@ public class Dolphin extends Actor
     public void act() 
     {
         fall();
-        if (Greenfoot.isKeyDown("space") 
-            && getY() > getWorld().getHeight() - 70)   {
+        if (Greenfoot.isKeyDown("space") && isOnSolidGround())
+        {
             jump();
         }
         move();
@@ -33,7 +33,7 @@ public class Dolphin extends Actor
     public void fall()
     {
         setLocation(getX(), getY() + velocity);
-        if (getY() > getWorld().getHeight() - 70)   {
+        if (isOnSolidGround())   {
             velocity = 0;
         }   else    {
             velocity += GRAVITY;
@@ -57,5 +57,15 @@ public class Dolphin extends Actor
             x += 3;
         }
         setLocation(x, y);
+    }
+    
+    public boolean isOnSolidGround()
+    {
+        boolean isOnGround = false;
+        
+        if (getY() > getWorld().getHeight() - 70)   {
+            isOnGround = true;
+        }
+        return isOnGround;
     }
 }
