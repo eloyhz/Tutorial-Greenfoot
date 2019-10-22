@@ -1,9 +1,9 @@
 #Greenfoot project file
 class.Boat.image=boat02-f.png
-editor.fx.0.height=558
+editor.fx.0.height=633
 editor.fx.0.width=800
-editor.fx.0.x=112
-editor.fx.0.y=195
+editor.fx.0.x=78
+editor.fx.0.y=85
 height=607
 package.numDependencies=0
 package.numTargets=2
@@ -36,7 +36,7 @@ target2.width=80
 target2.x=0
 target2.y=0
 version=3.0.0
-width=892
+width=752
 world.lastInstantiated=MyWorld
-xPosition=132
-yPosition=48
+xPosition=239
+yPosition=149
