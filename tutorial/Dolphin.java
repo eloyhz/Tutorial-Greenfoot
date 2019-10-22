@@ -27,6 +27,7 @@ public class Dolphin extends Actor
             && getY() > getWorld().getHeight() - 70)   {
             jump();
         }
+        move();
     }    
     
     public void fall()
@@ -42,5 +43,19 @@ public class Dolphin extends Actor
     public void jump()
     {
         velocity = -20;
+    }
+    
+    public void move()
+    {
+        int x = getX();
+        int y = getY();
+        
+        if (Greenfoot.isKeyDown("left"))    {
+            x -= 3;
+        }
+        if (Greenfoot.isKeyDown("right"))   {
+            x += 3;
+        }
+        setLocation(x, y);
     }
 }
