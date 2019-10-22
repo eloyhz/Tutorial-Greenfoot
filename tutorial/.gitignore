@@ -2,3 +2,5 @@
 *.ctxt
 *.jar
 *.html
+.DS_Store
+
