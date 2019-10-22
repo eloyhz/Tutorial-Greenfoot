@@ -30,5 +30,7 @@ public class MyWorld extends World
         addObject(boat,262,169);
         Dolphin dolphin = new Dolphin();
         addObject(dolphin,413,69);
+        Platform platform = new Platform();
+        addObject(platform,449,294);
     }
 }
